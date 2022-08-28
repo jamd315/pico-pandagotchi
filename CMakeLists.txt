@@ -9,6 +9,7 @@ pico_sdk_init()
 
 add_executable(pico-pandagotchi
     main.cpp
+    PandaStateMachine.cpp
 )
 
 pico_enable_stdio_usb(pico-pandagotchi 1)
