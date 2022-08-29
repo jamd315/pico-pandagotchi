@@ -116,7 +116,7 @@ def main():
         f.write('#include "sounds.hpp"\n')
         f.write('#include "notes.h"\n')
         f.write('#include "globals.hpp"\n')
-        f.write('#include "Animator.h"\n')
+        f.write('#include "Animator.hpp"\n')
         f.write("\n")
         for sequence in sequences:
             f.write(sequence.render_cpp())
@@ -128,7 +128,7 @@ def main():
         f.write("#ifndef _SOUNDS_H\n")
         f.write("#define _SOUNDS_H\n")
         f.write("\n")
-        f.write('#include "Animator.h"\n')
+        f.write('#include "Animator.hpp"\n')
         f.write("\n")
         for sequence in sequences:
             print(f"Defined sound sequence {sequence.name}")

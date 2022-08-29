@@ -3,7 +3,7 @@
 #ifndef _SEQUENCES_H
 #define _SEQUENCES_H
 
-#include "Animator.h"
+#include "Animator.hpp"
 
 extern const AnimationSequence eatAnimation;
 extern const AnimationSequence testAnimation;

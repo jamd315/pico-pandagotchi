@@ -3,6 +3,7 @@
 #include "hardware/gpio.h"
 #include "pico/binary_info.h"
 #include "PandaStateMachine.hpp"
+#include "Animator.hpp"
 
 const uint LED_PIN = 25;
 

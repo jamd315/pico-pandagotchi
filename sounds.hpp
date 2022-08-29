@@ -3,7 +3,7 @@
 #ifndef _SOUNDS_H
 #define _SOUNDS_H
 
-#include "Animator.h"
+#include "Animator.hpp"
 
 extern const SoundSequence testSound;
 

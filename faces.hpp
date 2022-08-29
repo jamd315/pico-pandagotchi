@@ -3,7 +3,7 @@
 #ifndef _FACES_H
 #define _FACES_H
 
-#include "Animator.h"
+#include "Animator.hpp"
 
 extern const AnimationSequence eatFace_1;
 extern const AnimationSequence eatFace_2;
