@@ -1,0 +1,425 @@
+# It's basically an AnimationSequence, like sequences.yaml, but it plays instantly.  Remember, no looping or delaying here, do that in sequences.yaml
+---
+  eatFace_1:
+    defaults:
+      delay: 0
+      transparent: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_left
+    right_eye: 
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: hungry_mouth
+    hand:
+      x: FACE_LEFT + 36
+      y: 45
+      w: 16
+      h: 12
+      image: eat_animation_hand
+    food:
+      x: FACE_LEFT + 32
+      y: 40
+      w: 8
+      h: 8
+  eatFace_2:
+    defaults:
+      delay: 0
+      transparent: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_left
+    right_eye: 
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: hungry_mouth
+    hand:
+      x: FACE_LEFT + 29
+      y: 32
+      w: 16
+      h: 12
+      image: eat_animation_hand
+    food:
+      x: FACE_LEFT + 32
+      y: 40
+      w: 8
+      h: 8
+  eatFace_3:
+    defaults:
+      delay: 0
+      transparent: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_left
+    right_eye: 
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: eat_animation_mouth_chew_1
+  eatFace_4:
+    defaults:
+      delay: 0
+      transparent: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_left
+    right_eye: 
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: eat_animation_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: eat_animation_mouth_chew_2
+  satisfiedFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: satisfied_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: satisfied_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: satisfied_mouth
+      drawonly: false
+  happyFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: happy_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: happy_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: happy_mouth
+      drawonly: false  # Last one gets the draw
+  asleepFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: asleep_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: asleep_eye_right
+    zzzs:
+      x: FACE_LEFT + 55
+      y: FACE_TOP + 7
+      w: 8
+      h: 11
+      image: asleep_zzz
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: asleep_mouth
+      drawonly: false  # Last one gets the draw
+  boredFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: bored_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: bored_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: bored_mouth
+      drawonly: false  # Last one gets the draw
+  hungryFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: hungry_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: hungry_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: hungry_mouth
+      drawonly: false  # Last one gets the draw
+  neutralFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: neutral_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: neutral_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: neutral_mouth
+      drawonly: false  # Last one gets the draw
+  satisfiedFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: satisfied_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: satisfied_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: satisfied_mouth
+      drawonly: false  # Last one gets the draw
+  sickFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: sick_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: sick_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: sick_mouth
+      drawonly: false  # Last one gets the draw
+  tiredFace:
+    defaults:
+      delay: 0
+      transparent: true
+      drawonly: true
+    base: 
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      transparent: false
+      image: base
+    left_eye:
+      x: LEFT_EYE_LEFT
+      y: LEFT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: tired_eye_left
+    right_eye: 
+      x: RIGHT_EYE_LEFT
+      y: RIGHT_EYE_TOP
+      w: EYE_WIDTH
+      h: EYE_HEIGHT
+      image: tired_eye_right
+    mouth: 
+      x: MOUTH_LEFT
+      y: MOUTH_TOP
+      w: MOUTH_WIDTH
+      h: MOUTH_HEIGHT
+      image: tired_mouth
+      drawonly: false  # Last one gets the draw

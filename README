@@ -1,5 +1,0 @@
-To create a new project:
- 1. Copy and rename this folder.
- 2. Rename the test.c file
- 3. Rename the target file in CMakeLists.txt add_executable from test.c to the new name
- 4. Rename the project in CMakeLists.txt (find and replace new_project_template)

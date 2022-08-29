@@ -1,0 +1,2 @@
+# Installation Instructions
+So uhh, getting CMake to install python dependencies in a virtual environment looks pretty unfun.  For now please just `pip install -r requirements.txt` using the requirements.txt in this folder.  Just gonna leave a TODO here for later ctrl-f purposes.

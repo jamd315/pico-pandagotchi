@@ -1,0 +1,32 @@
+# Next sound will play after duration + delay, so for back-to-backsounds, set delay to 0ms
+---
+  testSound:
+    defaults:
+      delay: 0
+      duration: 200
+    note_1:
+      frequency: NOTE_C3
+    note_2:
+      frequency: NOTE_D3
+    note_3:
+      frequency: NOTE_E3
+    note_4:
+      frequency: NOTE_F3
+    note_5:
+      frequency: NOTE_G3
+    note_6:
+      frequency: NOTE_A3
+    note_7:
+      frequency: NOTE_B3
+    note_8:
+      frequency: NOTE_C4
+    note_9:
+      frequency: NOTE_D4
+    note_10:
+      frequency: NOTE_E4
+    note_11:
+      frequency: NOTE_F4
+    note_12:
+      frequency: NOTE_G4
+    note_13:
+      frequency: NOTE_A4

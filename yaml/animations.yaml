@@ -1,0 +1,105 @@
+# 0 display eat_1
+# 0 sound NOTE_G5 100
+# 600 sound NOTE_D5 100
+# 800 display eat_2
+# 1200 sound NOTE_G4 100
+# 1200 loop 4 times 700 ms per loop
+#   (1200 + 700i) + 0 display eat3
+#   (1200 + 700i) + 0 sound NOTE_G3 100
+#   (1200 + 700i) + 150 sound NOTE_Gb3 100
+#   (1200 + 700i) + 350 display eat_4
+#   (1200 + 700i) + 700 continue loop
+# 4000 display satisfied
+# 4000 sound NOTE_G4 50
+# 4075 sound NOTE_G5 100
+
+# All top level objects are animations (lists of elements)
+# Strings can be passed to numerical parameters, it's assumed these will be #defined
+# Frame MUST have 'image' or 'face' attribute, loops MUST have 'loop' attribute
+---
+  eatAnimation:
+    defaults:
+      x: FACE_LEFT
+      y: FACE_TOP
+      w: FACE_WIDTH
+      h: FACE_HEIGHT
+      invert: false
+      transparent: false
+      cleardisplay: false
+    frame_1:
+      face: eatFace_1
+      delay: 800
+    frame_2:
+      face: eatFace_2
+      delay: 400
+    loop_1:
+      loop: 4
+      frame_3:
+        face: eatFace_3
+        delay: 350
+      frame_4:
+        face: eatFace_4
+        delay: 350
+    frame_5:
+      face: satisfiedFace
+      delay: 500
+  testAnimation:
+    defaults:
+      w: ICON_WIDTH
+      h: ICON_HEIGHT
+      invert: false
+      transparent: false
+      cleardisplay: true
+      delay: 200
+    frame_1:
+      x: 0
+      y: 0
+      image: attention
+    frame_2:
+      x: 8
+      y: 8
+      image: attention
+    frame_3:
+      x: 16
+      y: 16
+      image: attention
+    frame_4:
+      x: 24
+      y: 24
+      image: attention
+    frame_5:
+      x: 32
+      y: 32
+      image: attention
+    frame_6:
+      x: 40
+      y: 40
+      image: attention
+    frame_7:
+      x: 48
+      y: 48
+      image: attention
+    frame_8:
+      x: 56
+      y: 40
+      image: attention
+    frame_9:
+      x: 64
+      y: 32
+      image: attention
+    frame_10:
+      x: 72
+      y: 24
+      image: attention
+    frame_11:
+      x: 80
+      y: 16
+      image: attention
+    frame_12:
+      x: 88
+      y: 8
+      image: attention
+    frame_13:
+      x: 96
+      y: 0
+      image: attention
