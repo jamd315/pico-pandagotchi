@@ -9,3 +9,4 @@ build
 images.cpp
 sequences.cpp
 sounds.cpp
+faces.cpp

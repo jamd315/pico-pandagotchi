@@ -7,10 +7,14 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 
+# Use the pico-ssd1306 library
+add_subdirectory(pico-ssd1306)
+
 add_executable(pico-pandagotchi
     main.cpp
     PandaStateMachine.cpp
     Animator.cpp
+    logging.cpp
 )
 
 # Generate image data
@@ -49,4 +53,8 @@ pico_enable_stdio_uart(pico-pandagotchi 1)
 
 pico_add_extra_outputs(pico-pandagotchi)
 
-target_link_libraries(pico-pandagotchi pico_stdlib)
+target_link_libraries(pico-pandagotchi 
+    pico_stdlib
+    pico_ssd1306
+    hardware_i2c
+)
