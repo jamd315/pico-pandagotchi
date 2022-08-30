@@ -15,6 +15,10 @@ add_executable(pico-pandagotchi
     PandaStateMachine.cpp
     Animator.cpp
     logging.cpp
+    images.cpp
+    sequences.cpp
+    sounds.cpp
+    faces.cpp
 )
 
 # Generate image data

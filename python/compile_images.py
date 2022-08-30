@@ -27,8 +27,8 @@ for fname in files:
     int_arr = np.packbits(bool_arr)  # Pretend the bools are bitmasks for bytes
     size += int_arr.size  # Accumulate the size of each image so we can prepend the header with the flash consumed
     variable_name = os.path.splitext(os.path.basename(fname))[0]
-    cpp_str += f"const uint8_t {variable_name}[] =\n{{"
-    header_str += f"extern const uint8_t {variable_name}[];\n"
+    cpp_str += f"uint8_t {variable_name}[] =\n{{"
+    header_str += f"extern uint8_t {variable_name}[];\n"
     for i, val in enumerate(int_arr):
         if i % (img.shape[1] / 8) == 0:
             cpp_str += "\n  "

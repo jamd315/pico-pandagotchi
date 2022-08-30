@@ -5,6 +5,7 @@
 #include "PandaStateMachine.hpp"
 #include "Animator.hpp"
 #include "logging.hpp"
+#include "sequences.hpp"
 
 const uint LED_PIN = 25;
 
@@ -15,13 +16,8 @@ int main()
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     //PandaStateMachine panda;
-    //Animator anim;
-    //anim.startAnimationSequence(testAnimation);
-    pretty_log(LOG_VERBOSE, "Main", "Hello World!");
-    pretty_log(LOG_INFO, "Main", "Hello World!");
-    pretty_log(LOG_WARNING, "Main", "Hello World!");
-    pretty_log(LOG_ERROR, "Main", "Hello World!");
-    pretty_log(LOG_CRITICAL, "Main", "Hello World!");
+    Animator anim(i2c_default, 4, 5);
+    anim.startAnimationSequence(testAnimation);
 
     while(1)
     {
