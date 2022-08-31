@@ -33,7 +33,7 @@ typedef struct AnimationSequence
 
 typedef struct SoundElement
 {
-    uint16_t frequency;
+    float frequency;
     uint16_t duration;
     uint16_t delay;
     const SoundElement *next;
@@ -49,16 +49,17 @@ typedef struct SoundSequence
 class Animator
 {
 public:
-    Animator(i2c_inst_t *i2c_port, uint8_t sda_pin, uint8_t scl_pin);
+    Animator(pico_ssd1306::SSD1306 *display);
     void startAnimationSequence(const AnimationSequence &sequence);
     void startSoundSequence(const SoundSequence &sequence);
     void drawActiveAnimationElement();
+    void draw();
 
     // Hardcoded animations that need some context
     void cleanAnimation(bool invert=false);
 
 protected:
-    pico_ssd1306::SSD1306 display;
+    pico_ssd1306::SSD1306 *_display;
     const AnimationElement *activeAnimationElement;
     const SoundElement *activeSoundElement;
     uint8_t _speakerPin;
