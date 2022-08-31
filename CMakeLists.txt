@@ -27,21 +27,21 @@ find_package(Python3 REQUIRED)
 add_custom_target(
     compile_images ALL
     COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/python/compile_images.py ${CMAKE_CURRENT_SOURCE_DIR}
-    BYPRODUCTS images.hpp images.cpp
+    BYPRODUCTS ${CMAKE_CURRENT_SOURCE_DIR}/images.hpp ${CMAKE_CURRENT_SOURCE_DIR}/images.cpp
     COMMENT "Generating images..."
 )
 
 add_custom_target(
     compile_animations ALL
     COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/python/compile_animations.py ${CMAKE_CURRENT_SOURCE_DIR}
-    BYPRODUCTS faces.hpp faces.cpp sequences.hpp sequences.cpp
+    BYPRODUCTS ${CMAKE_CURRENT_SOURCE_DIR}/faces.hpp ${CMAKE_CURRENT_SOURCE_DIR}/faces.cpp ${CMAKE_CURRENT_SOURCE_DIR}/sequences.hpp ${CMAKE_CURRENT_SOURCE_DIR}/sequences.cpp
     COMMENT "Generating sequences..."
 )
 
 add_custom_target(
     compile_sounds ALL
     COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/python/compile_sounds.py ${CMAKE_CURRENT_SOURCE_DIR}
-    BYPRODUCTS sounds.hpp sounds.cpp
+    BYPRODUCTS ${CMAKE_CURRENT_SOURCE_DIR}/sounds.hpp ${CMAKE_CURRENT_SOURCE_DIR}/sounds.cpp
     COMMENT "Generating sounds..."
 )
 
