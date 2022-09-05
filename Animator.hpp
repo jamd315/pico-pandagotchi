@@ -8,7 +8,7 @@
 #define IMAGE_INVERT 1 << 1
 #define IMAGE_TRANSPARENT 1 << 2
 #define IMAGE_CLEARDISPLAY 1 << 3
-#define IMAGE_DRAWONLY 1 << 4
+#define IMAGE_RENDERONLY 1 << 4
 
 // Comment out to reduce log volume by omitting Animator logs
 //#define USE_SERIAL_ANIMATOR
@@ -53,7 +53,11 @@ public:
     void startAnimationSequence(const AnimationSequence &sequence);
     void startSoundSequence(const SoundSequence &sequence);
     void drawActiveAnimationElement();
-    void draw();
+    void drawToScreen();
+    void animationCallback();
+    static int64_t staticAnimationCallback(alarm_id_t id, void *user_data);
+    uint8_t getAnimationID();
+
 
     // Hardcoded animations that need some context
     void cleanAnimation(bool invert=false);
@@ -63,6 +67,9 @@ protected:
     const AnimationElement *activeAnimationElement;
     const SoundElement *activeSoundElement;
     uint8_t _speakerPin;
+    alarm_id_t animationAlarm;
+    uint8_t animationID;
+    int16_t accumulatedDrawTimeOffset;  // It takes time to to display, but frames want to be an exact delay apart, this compensates.
     
 };
 

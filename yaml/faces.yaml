@@ -142,7 +142,7 @@
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -168,12 +168,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: satisfied_mouth
-      drawonly: false
+      renderonly: false
   happyFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -199,12 +199,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: happy_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   asleepFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -236,12 +236,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: asleep_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   boredFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -267,12 +267,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: bored_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   hungryFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -298,12 +298,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: hungry_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   neutralFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -329,12 +329,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: neutral_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   satisfiedFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -360,12 +360,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: satisfied_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   sickFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -391,12 +391,12 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: sick_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw
   tiredFace:
     defaults:
       delay: 0
       transparent: true
-      drawonly: true
+      renderonly: true
     base: 
       x: FACE_LEFT
       y: FACE_TOP
@@ -422,4 +422,4 @@
       w: MOUTH_WIDTH
       h: MOUTH_HEIGHT
       image: tired_mouth
-      drawonly: false  # Last one gets the draw
+      renderonly: false  # Last one gets the draw

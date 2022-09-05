@@ -27,8 +27,6 @@ int main()
     pico_ssd1306::SSD1306 display = pico_ssd1306::SSD1306(i2c0, 0x3C, pico_ssd1306::Size::W128xH64);
     Animator anim = Animator(&display);
     anim.startAnimationSequence(testAnimation);
-    anim.drawActiveAnimationElement();
-    anim.draw();
 
     while(1)
     {
