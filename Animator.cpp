@@ -22,8 +22,7 @@ void Animator::startAnimationSequence(const AnimationSequence &sequence)
     }
     pretty_log(LOG_INFO, LOG_SOURCE, "Started animation id %d", sequence.id);
     activeAnimationElement = sequence.head;
-    drawActiveAnimationElement();
-    animationAlarm = add_alarm_in_ms(activeAnimationElement->delay, staticAnimationCallback, this, false);
+    animationCallback();
 }
 
 void Animator::drawActiveAnimationElement()
@@ -64,19 +63,21 @@ void Animator::animationCallback()
     drawActiveAnimationElement();
     absolute_time_t t2 = get_absolute_time();
     // We technically allow as much as 500us of error per frame with this divide, or 0.1s after 200 frames
-    accumulatedDrawTimeOffset = absolute_time_diff_us(t1, t2) / 1000;
+    accumulatedDrawTimeOffset += absolute_time_diff_us(t1, t2) / 1000;
     int newDelay = activeAnimationElement->delay - accumulatedDrawTimeOffset;
     pretty_log(LOG_VERBOSE, LOG_SOURCE, "New callback in %dms", newDelay);
     
     if (newDelay <= 0)
     {
+        accumulatedDrawTimeOffset -= activeAnimationElement->delay;
         pretty_log(LOG_VERBOSE, LOG_SOURCE, "Negative or zero delay, instantly triggered next animationCallback()");
         animationCallback();
     }
     else
     {
+        accumulatedDrawTimeOffset = 0;
         add_alarm_in_ms(newDelay, staticAnimationCallback, this, false);
-        pretty_log(LOG_VERBOSE, "Animator Callback", "Callback triggered in %dms", newDelay);
+        pretty_log(LOG_VERBOSE, LOG_SOURCE, "Callback triggered in %dms", newDelay);
 
     }
 }

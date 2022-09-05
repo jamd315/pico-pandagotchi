@@ -99,6 +99,8 @@ class AnimationSequence:
                 if face_name not in self.face_map:
                     raise KeyError(f"Face '{face_name}' not found")
                 face = self.face_map[face_name]
+                face_delay = raw_element.get("delay", raw_element.get("delay", 0))
+                face.set_delay(face_delay)
                 new_elements.extend(face.elements)
             elif "loop" in raw_element:
                 new_elements = self.loop_handler(raw_element, new_elements, raw_element["loop"])
@@ -130,9 +132,13 @@ class AnimationSequence:
         return f"extern const AnimationSequence {self.name};\n"
 
 
-# Turns out this isn't really used, but still handy I guess
 class Face(AnimationSequence):
-    pass
+    # Hopefully this doesn't cause problems with the Face cache
+    def set_delay(self, delay):
+        if len(self.elements) > 0:
+            if self.elements[-1].delay != 0:  # Not sure how this would happen but check anyways
+                raise ValueError("Unexpected element delay in constructed Face")
+            self.elements[-1].delay = delay
 
 
 def main():

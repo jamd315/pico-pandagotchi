@@ -67,9 +67,9 @@ protected:
     const AnimationElement *activeAnimationElement;
     const SoundElement *activeSoundElement;
     uint8_t _speakerPin;
-    alarm_id_t animationAlarm;
-    uint8_t animationID;
-    int16_t accumulatedDrawTimeOffset;  // It takes time to to display, but frames want to be an exact delay apart, this compensates.
+    alarm_id_t animationAlarm = 0;
+    uint8_t animationID = 0;
+    int16_t accumulatedDrawTimeOffset = 0;  // It takes time to to display, but frames want to be an exact delay apart, this compensates.
     
 };
 
