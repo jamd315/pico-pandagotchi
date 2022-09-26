@@ -18,7 +18,6 @@ add_executable(pico-pandagotchi
     images.cpp
     sequences.cpp
     sounds.cpp
-    faces.cpp
 )
 
 # Generate image data
@@ -34,7 +33,7 @@ add_custom_target(
 add_custom_target(
     compile_animations ALL
     COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/python/compile_animations.py ${CMAKE_CURRENT_SOURCE_DIR}
-    BYPRODUCTS ${CMAKE_CURRENT_SOURCE_DIR}/faces.hpp ${CMAKE_CURRENT_SOURCE_DIR}/faces.cpp ${CMAKE_CURRENT_SOURCE_DIR}/sequences.hpp ${CMAKE_CURRENT_SOURCE_DIR}/sequences.cpp
+    BYPRODUCTS ${CMAKE_CURRENT_SOURCE_DIR}/sequences.hpp ${CMAKE_CURRENT_SOURCE_DIR}/sequences.cpp
     COMMENT "Generating sequences..."
 )
 

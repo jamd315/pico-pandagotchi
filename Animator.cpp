@@ -2,6 +2,7 @@
 #include "hardware/i2c.h"
 #include "Animator.hpp"
 #include "pico-ssd1306/ssd1306.h"
+#include "pico-ssd1306/shapeRenderer/ShapeRenderer.h"
 #include "logging.hpp"
 
 #define LOG_SOURCE "Animator"
@@ -27,9 +28,30 @@ void Animator::startAnimationSequence(const AnimationSequence &sequence)
 
 void Animator::drawActiveAnimationElement()
 {
-    if (activeAnimationElement->meta & IMAGE_CLEARDISPLAY)
+    // Extract relevent bits/bools from activeAnimationElement->meta
+    bool clearDisplay = activeAnimationElement->meta & IMAGE_CLEARDISPLAY;
+    bool invert = activeAnimationElement->meta & IMAGE_INVERT;
+    bool renderOnly = activeAnimationElement->meta & IMAGE_RENDERONLY;
+    bool transparent = activeAnimationElement->meta & IMAGE_TRANSPARENT;
+    
+    // If clearDisplay, clear the display
+    if (clearDisplay)
     {
         _display->clear();
+    }
+
+    // If not transparent, erase the area first
+    // If clearDisplay, we've already overwritten, so ignore
+    if (!transparent && !clearDisplay)
+    {
+        pico_ssd1306::fillRect(
+            _display,
+            activeAnimationElement->x,
+            activeAnimationElement->y,
+            activeAnimationElement->x + activeAnimationElement-> w,
+            activeAnimationElement->y + activeAnimationElement->h, 
+            pico_ssd1306::WriteMode::SUBTRACT
+        );
     }
     _display->addBitmapImage(
         activeAnimationElement->x,
@@ -38,7 +60,7 @@ void Animator::drawActiveAnimationElement()
         activeAnimationElement->h,
         activeAnimationElement->image
     );
-    if (!(activeAnimationElement->meta & IMAGE_RENDERONLY))  // By default we drawToScreen, unless IMAGE_RENDERONLY is set
+    if (!renderOnly)  // By default we drawToScreen, unless IMAGE_RENDERONLY is set
     {
         drawToScreen();
     }
